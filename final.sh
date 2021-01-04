@@ -41,7 +41,8 @@ fish -c "omf install bobthefish"
 echo "set -x PATH \$PATH /home/mttaggart/.cargo/bin" >> /home/mttaggart/.config/fish/config.fish
 
 # Setup Terminator
-sudo mv -p /tmp/terminatorconfig ~/.config/terminator/config
+mkdir ~/.config/terminator
+cp /tmp/terminatorconfig ~/.config/terminator/config
 
 # Tmux
 git clone https://github.com/tmux-plugins/tpm /home/mttaggart/.tmux/plugins/tpm
