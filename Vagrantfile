@@ -12,10 +12,10 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "kalilinux/rolling"
-
-  # Disk Config
-  config.vm.disk :disk, name: "root", size: "120GB", primary: true
+  config.vm.define "kali" do |k|
+    k.vm.box = "kalilinux/rolling"
+    #k.vm.disk :disk, size: "120GB", primary: true
+  end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -53,11 +53,12 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-     vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-     vb.memory = "8126"
+  #  Display the VirtualBox GUI when booting the machine
+     #vb.gui = true
+
+     # Customize the amount of memory on the VM:
+     vb.memory = 8126
+     vb.cpus = 2
   end
   #
   # View the documentation for the provider you are using for more
@@ -66,5 +67,6 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
+   config.vm.provision "file", source: "final.sh", destination: "/tmp/final.sh"
    config.vm.provision "shell", path: "./setup.sh"
 end
