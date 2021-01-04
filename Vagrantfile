@@ -68,5 +68,6 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
    config.vm.provision "file", source: "final.sh", destination: "/tmp/final.sh"
+   config.vm.provision "file", source: "terminatorconfig", destination: "/tmp/terminatorconfig"
    config.vm.provision "shell", path: "./setup.sh"
 end

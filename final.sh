@@ -30,10 +30,18 @@ git clone https://github.com/BC-SECURITY/Empire.git
 git clone https://github.com/powerline/fonts
 git clone https://github.com/LasCC/Hack-Tools
 
+cd fonts
+chmod +x install.sh
+./install.sh
+cd ~
+
 # Setup Shell
 curl -kL https://get.oh-my.fish | fish
 fish -c "omf install bobthefish"
 echo "set -x PATH \$PATH /home/mttaggart/.cargo/bin" >> /home/mttaggart/.config/fish/config.fish
+
+# Setup Terminator
+sudo mv -p /tmp/terminatorconfig ~/.config/terminator/config
 
 # Tmux
 git clone https://github.com/tmux-plugins/tpm /home/mttaggart/.tmux/plugins/tpm
