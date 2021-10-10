@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provider "virtualbox" do |vb|
+     vb.name = "Kali"
      vb.memory = 8126
      vb.cpus = 2
   end
