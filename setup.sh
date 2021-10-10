@@ -6,9 +6,10 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 # Install distro stuff
-
+sudo -i
+export DEBIAN_FRONTEND=noninteractive
 apt update
-apt DEBIAN_FRONTEND=noninteractive install -y cmake fish terminator gedit python3-pip radare2 brave-browser vim-gtk3 alien
+apt install -y cmake fish terminator gedit python3-pip radare2 brave-browser vim-gtk3 alien
 
 # Install Python Stuff
 pip3 install jupyterlab stegoveritas pwntools pandas plotly ipywidgets
