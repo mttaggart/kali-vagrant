@@ -20,7 +20,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #GitHub Stuff
 cd Scripts
-
+wget "https://github.com/rizinorg/cutter/releases/download/v2.0.3/Cutter-v2.0.3-x64.Linux.AppImage"
+chmod +x Cutter-v2.0.3-x64.Linux.AppImage 
 git clone https://github.com/neox41/WinEnum.git
 git clone https://github.com/rebootuser/LinEnum.git
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
@@ -28,12 +29,20 @@ git clone https://github.com/mzet-/linux-exploit-suggester.git
 git clone https://github.com/jondonas/linux-exploit-suggester-2.git
 git clone https://github.com/BC-SECURITY/Empire.git
 git clone https://github.com/powerline/fonts
-git clone https://github.com/LasCC/Hack-Tools
+git clone https://github.com/samratashok/nishang
+git clone https://github.com/cobbr/Covenant
 
 cd fonts
 chmod +x install.sh
 ./install.sh
 cd ~
+
+# Install dotnet
+cd Downloads
+wget "https://dot.net/v1/dotnet-install.sh"
+chmod +x ./dotnet-install.sh
+./dotnet-install.sh -c Current
+rm ./dotnet-install.sh
 
 # Setup Shell
 curl -kL https://get.oh-my.fish | fish
