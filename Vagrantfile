@@ -9,5 +9,6 @@ Vagrant.configure("2") do |config|
      vb.cpus = 2
   end
    config.vm.provision "file", source: "terminatorconfig", destination: "/tmp/terminatorconfig"
+   config.vm.provision "file", source: "final.sh", destination: "/tmp/final.sh"
    config.vm.provision "shell", path: "./setup.sh"
 end
