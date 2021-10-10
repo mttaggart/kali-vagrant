@@ -1,23 +1,4 @@
 #!/bin/bash
-# Final user setup for Kali. Everything required for interactivitymkdir Documents
-cd /home/mttaggart
-mkdir Downloads
-mkdir Documents
-mkdir Scripts
-
-cd Downloads
-# Get Zenmap
-wget "https://nmap.org/dist/zenmap-7.91-1.noarch.rpm"
-sudo alien -d zenmap-7.91-1.noarch.rpm
-sudo dpkg -i zenmap*.deb
-rm zenmap*
-cd ..
-
-# Setup rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-/home/mttaggart/.cargo/bin/cargo install rustscan 
-/home/mttaggart/.cargo/bin/cargo install feroxbuster
-
 #GitHub Stuff
 cd Scripts
 wget "https://github.com/rizinorg/cutter/releases/download/v2.0.3/Cutter-v2.0.3-x64.Linux.AppImage"
@@ -56,14 +37,14 @@ cp /tmp/terminatorconfig ~/.config/terminator/config
 # Tmux
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm /home/mttaggart/.tmux/plugins/tpm
-curl -fkLo /home/mttaggart/.tmux.conf --create-dirs \ 
-"https://gist.githubusercontent.com/mttaggart/e33b55646ddd49de9dcdb8afe8beaa7c/raw/ed756f9acbeec3400a4f16a5b9ea9e3077eee3a0/tmux.conf"
+curl -fkLo /home/mttaggart/.tmux.conf > 
+"https://gist.githubusercontent.com/mttaggart/e33b55646ddd49de9dcdb8afe8beaa7c/raw/de02a48263c4daaf51ad2fd67059f45d6387d59e/tmux.conf"
 
 # Vim
 curl -fkLo /home/mttaggart/.vim/autoload/plug.vim --create-dirs \
-"https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+    "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
 curl -fkLo /home/mttaggart/.vimrc \
-"https://gist.githubusercontent.com/mttaggart/b788e618eddca83a9c033572bfdf3c76/raw/5541038c6539ef2b2c4d4075debc544c5253cde3/.vimrc"
+    "https://gist.githubusercontent.com/mttaggart/6d702f629c469fce5923ba42fde51a73/raw/d66f305444cde49a6dea7a31b49c3798d71c1db4/.vimrc"
 
-sudo python3 /home/mttaggart/.vim/plugged/youcompleteme/install.py
+
