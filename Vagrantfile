@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "kalilinux/rolling"
 
   config.vm.provider "virtualbox" do |vb|
+     vb.gui = false
      vb.name = "Kali"
      vb.memory = 8126
      vb.cpus = 2
