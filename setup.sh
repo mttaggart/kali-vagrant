@@ -15,7 +15,7 @@ pip3 install jupyterlab stegoveritas pwntools pandas plotly ipywidgets
 jupyter labextension install jupyterlab-plotly
 
 # Set user
-adduser mttaggart --shell /usr/bin/fish --quiet
+useradd -m -s /usr/bin/fish mttaggart
 gpasswd -a mttaggart sudo
 
 # Move final script into place
