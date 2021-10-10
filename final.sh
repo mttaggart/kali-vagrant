@@ -54,6 +54,7 @@ mkdir ~/.config/terminator
 cp /tmp/terminatorconfig ~/.config/terminator/config
 
 # Tmux
+mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm /home/mttaggart/.tmux/plugins/tpm
 curl -fkLo /home/mttaggart/.tmux.conf --create-dirs \ 
 "https://gist.githubusercontent.com/mttaggart/e33b55646ddd49de9dcdb8afe8beaa7c/raw/ed756f9acbeec3400a4f16a5b9ea9e3077eee3a0/tmux.conf"
