@@ -8,7 +8,7 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 # Install distro stuff
 
 apt update
-apt install -y cmake fish terminator gedit python3-pip radare2 brave-browser vim-gtk3 alien
+apt DEBIAN_FRONTEND=noninteractive install -y cmake fish terminator gedit python3-pip radare2 brave-browser vim-gtk3 alien
 
 # Install Python Stuff
 pip3 install jupyterlab stegoveritas pwntools pandas plotly ipywidgets
@@ -78,13 +78,12 @@ cp /tmp/terminatorconfig ~/.config/terminator/config
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm /home/mttaggart/.tmux/plugins/tpm
 curl -fkLo /home/mttaggart/.tmux.conf --create-dirs \ 
-"https://gist.githubusercontent.com/mttaggart/e33b55646ddd49de9dcdb8afe8beaa7c/raw/ed756f9acbeec3400a4f16a5b9ea9e3077eee3a0/tmux.conf"
+"https://gist.githubusercontent.com/mttaggart/e33b55646ddd49de9dcdb8afe8beaa7c/raw/de02a48263c4daaf51ad2fd67059f45d6387d59e/tmux.conf"
 
 # Vim
 curl -fkLo /home/mttaggart/.vim/autoload/plug.vim --create-dirs \
 "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
 curl -fkLo /home/mttaggart/.vimrc \
-"https://gist.githubusercontent.com/mttaggart/b788e618eddca83a9c033572bfdf3c76/raw/5541038c6539ef2b2c4d4075debc544c5253cde3/.vimrc"
+"https://gist.githubusercontent.com/mttaggart/6d702f629c469fce5923ba42fde51a73/raw/d66f305444cde49a6dea7a31b49c3798d71c1db4/.vimrc"
 
-sudo python3 /home/mttaggart/.vim/plugged/youcompleteme/install.py
