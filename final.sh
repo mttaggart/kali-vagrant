@@ -37,14 +37,11 @@ cp /tmp/terminatorconfig ~/.config/terminator/config
 # Tmux
 mkdir -p ~/.tmux/plugins
 git clone https://github.com/tmux-plugins/tpm /home/mttaggart/.tmux/plugins/tpm
-curl -fkLo /home/mttaggart/.tmux.conf > 
-"https://gist.githubusercontent.com/mttaggart/e33b55646ddd49de9dcdb8afe8beaa7c/raw/de02a48263c4daaf51ad2fd67059f45d6387d59e/tmux.conf"
+curl -fkLo /home/mttaggart/.tmux.conf > "https://gist.githubusercontent.com/mttaggart/e33b55646ddd49de9dcdb8afe8beaa7c/raw/de02a48263c4daaf51ad2fd67059f45d6387d59e/tmux.conf"
 
 # Vim
-curl -fkLo /home/mttaggart/.vim/autoload/plug.vim --create-dirs \
-    "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+curl -fkLo /home/mttaggart/.vim/autoload/plug.vim --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
-curl -fkLo /home/mttaggart/.vimrc \
-    "https://gist.githubusercontent.com/mttaggart/6d702f629c469fce5923ba42fde51a73/raw/d66f305444cde49a6dea7a31b49c3798d71c1db4/.vimrc"
+curl -fkLo /home/mttaggart/.vimrc "https://gist.githubusercontent.com/mttaggart/6d702f629c469fce5923ba42fde51a73/raw/d66f305444cde49a6dea7a31b49c3798d71c1db4/.vimrc"
 
 
